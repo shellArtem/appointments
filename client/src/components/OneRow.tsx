@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function OneRow({
   el,
@@ -83,4 +83,4 @@ function OneRow({
   );
 }
 
-export default React.memo(OneRow);
+export default OneRow;
