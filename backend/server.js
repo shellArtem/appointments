@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json({extended: true}))
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: "http://77.222.60.196:5173", 
+  origin: true, // "http://77.222.60.196:5173", 
   credentials: true }
 ));
 
