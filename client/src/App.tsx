@@ -21,10 +21,10 @@ function App() {
   const [service, setService] = useState("");
   const [editService, setEditService] = useState("");
   const [message, setMessage] = useState("");
-  // const [appointmentForm, setAppointmentsForm] = useState(false);
-  // const getForm = () => {
-  //   setAppointmentsForm(!appointmentForm);
-  // };
+  const [appointmentForm, setAppointmentsForm] = useState(false);
+  const getForm = () => {
+    setAppointmentsForm(!appointmentForm);
+  };
 
   const delHeandler = () => {
     setDel(!del);
@@ -148,7 +148,7 @@ function App() {
         <h3> Только для мастеров </h3>
       </div>
       <Suspense>
-      {/* <div>
+      <div>
         <button type="button" onClick={() => getForm()}>
           {" "}
           Форма создания/удаления записи{" "}
@@ -170,7 +170,7 @@ function App() {
             message={message}
           />
         </div>
-      )} */}
+      )}
       <div>
         <ul>
           {appointments.length ? (

@@ -35,7 +35,8 @@ function OneRow({
             el.service === "Нет" ||
             el.service === "Свободно" ||
             el.service === "Пусто" ||
-            el.service === "Нет записи"
+            el.service === "Нет записи" ||
+            el.service === ""
               ? { color: "#5a9954" }
               : { color: "#c73c3c" }
           }

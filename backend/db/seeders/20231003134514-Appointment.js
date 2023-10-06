@@ -27,7 +27,7 @@ module.exports = {
             date,
             time,
             master,
-            service: 'Записи нет',
+            service: '',
             createdAt: new Date(),
             updatedAt: new Date()
           });
