@@ -1,7 +1,6 @@
  /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
-import { Suspense, lazy } from 'react';
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense, lazy, useMemo } from "react";
 import "./App.css";
 import AppointmentForm from "./components/AppointmentForm";
 const OneRow = lazy(() => import('./components/OneRow'))
@@ -125,17 +124,34 @@ function App() {
     setOpenMaster(openMaster === master ? "" : master);
   };
 
-  const mastersByDate = appointments.reduce((acc, cur) => {
-    const date = new Date(cur.date).toLocaleDateString();
-    if (!acc[date]) acc[date] = new Set();
-    acc[date].add(cur.master);
-    return acc;
-  }, {});
+  // const mastersByDate = appointments.reduce((acc, cur) => {
+  //   const date = new Date(cur.date).toLocaleDateString();
+  //   if (!acc[date]) acc[date] = new Set();
+  //   acc[date].add(cur.master);
+  //   return acc;
+  // }, {});
 
-  const appointmentsByMasterOnDate = appointments.filter((appointment) => {
-    const date = new Date(appointment.date).toLocaleDateString();
-    return date === openDate && appointment.master === openMaster;
-  });
+  // const appointmentsByMasterOnDate = appointments.filter((appointment) => {
+  //   const date = new Date(appointment.date).toLocaleDateString();
+  //   return date === openDate && appointment.master === openMaster;
+  // });
+
+  const mastersByDate = useMemo(() => (
+    appointments.reduce((acc, cur) => {
+      const date = new Date(cur.date).toLocaleDateString();
+      if (!acc[date]) acc[date] = new Set();
+      acc[date].add(cur.master);
+      return acc;
+    }, {})
+  ), [appointments]); // dependency array
+  
+  const appointmentsByMasterOnDate = useMemo(() => (
+    appointments.filter((appointment) => {
+      const date = new Date(appointment.date).toLocaleDateString();
+      return date === openDate && appointment.master === openMaster;
+    })
+  ), [appointments, openDate, openMaster]); // dependency array
+
 
   const days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
 

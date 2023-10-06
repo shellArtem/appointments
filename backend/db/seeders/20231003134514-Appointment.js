@@ -17,7 +17,7 @@ module.exports = {
     const appointments = [];
 
     // Максимальное количество дней для создание записей в будущем
-    const daysInFuture = 0;
+    const daysInFuture = 90;
 
     for (let i = 0; i < daysInFuture; i++) {
       const date = format(addDays(new Date(), i), 'yyyy-MM-dd');
