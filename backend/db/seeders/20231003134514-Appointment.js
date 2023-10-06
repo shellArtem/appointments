@@ -17,7 +17,7 @@ module.exports = {
     const appointments = [];
 
     // Максимальное количество дней для создание записей в будущем
-    const daysInFuture = 90;
+    const daysInFuture = 0;
 
     for (let i = 0; i < daysInFuture; i++) {
       const date = format(addDays(new Date(), i), 'yyyy-MM-dd');
@@ -35,7 +35,7 @@ module.exports = {
       }
     }
 
-    await queryInterface.bulkInsert('Appointments', appointments);
+    // await queryInterface.bulkInsert('Appointments', appointments);
   },
 
   async down (queryInterface, Sequelize) {

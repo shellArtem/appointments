@@ -3,11 +3,9 @@
 import { Suspense, lazy } from 'react';
 import { useEffect, useState } from "react";
 import "./App.css";
-// import AppointmentForm from "./components/AppointmentForm";
-// import OneRow from "./components/OneRow";
+import AppointmentForm from "./components/AppointmentForm";
 const OneRow = lazy(() => import('./components/OneRow'))
 
-import Pagination from "./components/Pagination";
 
 function App() {
   const [appointments, setAppointments] = useState([]);
@@ -33,7 +31,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch("http://77.222.60.196:3003/appointments", {
+        const response = await fetch("http://localhost:3003/appointments", {
           method: "GET",
           headers: { "Content-type": "application/json" },
         });
@@ -47,7 +45,7 @@ function App() {
 
   const deleteAppointment = async (id : number) => {
     try {
-      await fetch("http://77.222.60.196:3003/appointments/", {
+      await fetch("http://localhost:3003/appointments/", {
         method: "DELETE",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ id: id }),
@@ -87,7 +85,7 @@ function App() {
     };
 
     try {
-      const response = await fetch("http://77.222.60.196:3003/appointments", {
+      const response = await fetch("http://localhost:3003/appointments", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(appointmentDetails),
@@ -111,7 +109,7 @@ function App() {
 
   const handleEditSubmit = async (id: number) => {
     try {
-      await fetch("http://77.222.60.196:3003/appointments", {
+      await fetch("http://localhost:3003/appointments", {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ editService, id }),
@@ -222,7 +220,7 @@ function App() {
             <span> loading... </span>
           )}
         </ul>
-        <div> ©shellArtem 2023 </div>
+        {/* <div> ©shellArtem 2023 </div> */}
       </div>
       </Suspense>
     </>
