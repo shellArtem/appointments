@@ -35,7 +35,7 @@ module.exports = {
       }
     }
 
-    // await queryInterface.bulkInsert('Appointments', appointments);
+    await queryInterface.bulkInsert('Appointments', appointments);
   },
 
   async down (queryInterface, Sequelize) {
