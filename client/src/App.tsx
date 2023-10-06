@@ -2,7 +2,7 @@
 //@ts-nocheck
 import { useEffect, useState } from "react";
 import "./App.css";
-import AppointmentForm from "./components/AppointmentForm";
+// import AppointmentForm from "./components/AppointmentForm";
 import OneRow from "./components/OneRow";
 
 import Pagination from "./components/Pagination";
@@ -19,10 +19,10 @@ function App() {
   const [service, setService] = useState("");
   const [editService, setEditService] = useState("");
   const [message, setMessage] = useState("");
-  const [appointmentForm, setAppointmentsForm] = useState(false);
-  const getForm = () => {
-    setAppointmentsForm(!appointmentForm);
-  };
+  // const [appointmentForm, setAppointmentsForm] = useState(false);
+  // const getForm = () => {
+  //   setAppointmentsForm(!appointmentForm);
+  // };
 
   const delHeandler = () => {
     setDel(!del);
@@ -145,7 +145,7 @@ function App() {
         <h2> Онлайн запись </h2>
         <h3> Только для мастеров </h3>
       </div>
-      <div>
+      {/* <div>
         <button type="button" onClick={() => getForm()}>
           {" "}
           Форма создания/удаления записи{" "}
@@ -167,7 +167,7 @@ function App() {
             message={message}
           />
         </div>
-      )}
+      )} */}
       <div>
         <ul>
           {appointments.length ? (

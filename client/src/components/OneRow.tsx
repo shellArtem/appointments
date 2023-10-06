@@ -31,7 +31,11 @@ function OneRow({
             el.service === "пусто" ||
             el.service === "нет записи" ||
             el.service === "записи нет" ||
-            el.service === "отмена"
+            el.service === "отмена" || 
+            el.service === "Нет" ||
+            el.service === "Свободно" ||
+            el.service === "Пусто" ||
+            el.service === "Нет записи"
               ? { color: "#5a9954" }
               : { color: "#c73c3c" }
           }
