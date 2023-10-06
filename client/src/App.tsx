@@ -5,6 +5,8 @@ import "./App.css";
 import AppointmentForm from "./components/AppointmentForm";
 import OneRow from "./components/OneRow";
 
+import Pagination from "./components/Pagination";
+
 function App() {
   const [appointments, setAppointments] = useState([]);
   const [del, setDel] = useState(false);
