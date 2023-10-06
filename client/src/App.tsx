@@ -1,9 +1,11 @@
  /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
+import { Suspense, lazy } from 'react';
 import { useEffect, useState } from "react";
 import "./App.css";
 // import AppointmentForm from "./components/AppointmentForm";
-import OneRow from "./components/OneRow";
+// import OneRow from "./components/OneRow";
+const OneRow = lazy(() => import('./components/OneRow'))
 
 import Pagination from "./components/Pagination";
 
@@ -145,6 +147,7 @@ function App() {
         <h2> Онлайн запись </h2>
         <h3> Только для мастеров </h3>
       </div>
+      <Suspense>
       {/* <div>
         <button type="button" onClick={() => getForm()}>
           {" "}
@@ -221,6 +224,7 @@ function App() {
         </ul>
         <div> ©shellArtem 2023 </div>
       </div>
+      </Suspense>
     </>
   );
 }
