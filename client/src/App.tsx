@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch("http://localhost:3003/appointments", {
+        const response = await fetch("http://77.222.60.196:3003/appointments", {
           method: "GET",
           headers: { "Content-type": "application/json" },
         });
@@ -45,7 +45,7 @@ function App() {
 
   const deleteAppointment = async (id : number) => {
     try {
-      await fetch("http://localhost:3003/appointments/", {
+      await fetch("http://77.222.60.196:3003/appointments/", {
         method: "DELETE",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ id: id }),
@@ -85,7 +85,7 @@ function App() {
     };
 
     try {
-      const response = await fetch("http://localhost:3003/appointments", {
+      const response = await fetch("http://77.222.60.196:3003/appointments", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(appointmentDetails),
@@ -109,7 +109,7 @@ function App() {
 
   const handleEditSubmit = async (id: number) => {
     try {
-      await fetch("http://localhost:3003/appointments", {
+      await fetch("http://77.222.60.196:3003/appointments", {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ editService, id }),
