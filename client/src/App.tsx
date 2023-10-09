@@ -204,6 +204,7 @@ function App() {
                     top: "2%",
                     backgroundColor: "white",
                     opacity: "1",
+                    color: 'black'
                   }}
                 >
                   <p style={{ border: "1px solid black" }}>
